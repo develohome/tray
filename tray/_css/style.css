@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+:root{
+    --header:#49868C;
+    --nav:   #A0D9D9;
+    --main:  #ececec;
+    --hover:  #A62D2D;
+}
+ *{
+    font-size: 16px;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+body, html{
+    width: 100%;
+    min-height: 100vh;
+}
+.container{
+    display: grid;
+    grid-template-areas: 'header header' 'nav main';
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: 8vh 92vh;
+}
+header{
+    grid-area: header;
+    background-color: var(--header);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row-reverse;
+    padding: 0 3rem;
+} 
+header h2{
+    text-transform: capitalize;
+    color: #ececec;
+}
+nav{
+    grid-area: nav;
+    background-color: var(--nav);
+    
+}  
+main{
+    grid-area: main;
+    background-color: var(--main);
+} 
+
+
+/* NAV ===============================*/
+nav ul{
+    margin-top: 30px;
+}
+nav ul li{
+    
+}
+nav ul li a{
+    color: var(--header);
+    font-size:2rem;
+    display: block;
+}
+nav ul li a:hover, .action{
+    color: var(--hover);
+}
+nav ul li i.fa{
+    width: 40px;
+}
+nav ul li a span{
+    text-transform: capitalize;
+}
+/* MAIN ===============================*/
+
+main h1{
+    font-size: 3rem;
+    padding: 0 1rem;
+    height: 10vh;
+    color: var(--hover);
+}
+main h1 span{
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+main h2{
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    margin-bottom: 40px;
+}
+.msg{
+    width: 300px;
+    height: 100px;
+    background: var(--main);
+    border:3px solid var(--header);
+    border-radius: 10px;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    transition: .5s;
+}
+/*MAIN GERAL ==========================*/
+
+section.main{
+    height: 82vh;
+    width: 100%;
+    overflow-y: scroll;
+    padding: 2rem 1rem;
+}
+/* MAIN ===============================*/
+#main section.main{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+#main section.main .box{
+    width: 250px;
+    height: 200px;
+    background-color: #fff;
+    margin: 10px;
+    border-radius: 10px;
+    border: 1px solid var(--hover);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: var(--header);
+    overflow: hidden;
+}
+#main section.main .box:hover i.fa{
+    transform:scale(.7) translate(110px, -100px);
+}
+#main section.main .box:hover .content{
+    transform: translateX(100%);
+}
+#main section.main .box i.fa{
+    font-size: 4em;
+    transition: .5s;
+}
+#main section.main .box:hover span{
+    display: none;
+}
+#main section.main .box span{
+    font-size: 2rem;
+    text-transform: capitalize;
+}
+#main section.main .box .content{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #0008;
+    color: #fff;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+    text-align: center;
+    left: -100%;
+    transition: .5s;
+}
+/* NOVO USUÁRIO =======================*/
+
+#newuser form{
+    width: 400px;
+    margin: 3rem auto;
+}
+#newuser form input{
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    outline: none;
+    margin-bottom: 30px;
+    border: 1px solid var(--header);
+    padding: 0 10px;
+}
+#newuser form input[type='submit']{
+    font-weight: 600;
+    color: var(--header);
+}
+/* USUÁRIOS ===========================*/
+#user section.main #btConfirma{
+    position: absolute;
+    right: 2rem;
+    margin-top: -33px;
+    height: 30px;
+}
+#user section.main table{
+    width: 100%;
+    margin: auto;
+    border-collapse: collapse;
+}
+#user section.main table thead{
+    background: var(--header);
+    color: var(--main);
+}
+
+#user section.main table thead th{
+    height: 40px;
+    text-align: left;
+    padding: 0 10px;
+}
+#user section.main table tbody tr{
+    cursor: pointer;
+}
+#user section.main table tbody tr:hover{
+    background: var(--nav);
+}
+#user section.main table tbody td{
+    padding: 3px 10px;
+    border: 1px solid var(--header);
+}
+
+#user section.main table tbody td input{
+    width: 100%;
+    background: transparent;
+    border: none;
+}
+#user section.main table tbody td:last-child{
+    width: 20%;
+    text-align: center;
+    padding: 3px 0;
+}
+#user section.main table tbody td button{
+    border: 1px solid var(--header);
+    margin: 0 5px;
+    font-weight: 500;
+    width: 90px;
+    color: var(--main);
+}
+#user section.main table tbody td:last-child button:first-child{
+    background: #006eff;
+}
+#user section.main table tbody td:last-child button:last-child{
+    background: #ff0000;
+}
+
+
+/* VENDA =============================*/
+#venda section.main h2{
+    font-size: 1.3rem;
+    color: var(--header);
+    margin: 0;
+    padding: 0;
+}
+#venda section.main h3{
+    font-size: 1rem;
+    color: var(--header);
+}
+#venda section.main form{
+    margin-top: 50px;
+}
+#venda section.main form input{
+    padding-left:10px;
+    outline: none;
+}
+#venda section.main form #produto{
+    width: 50%;
+}
+
+/* RELATÓRIO DE VENDAS ===========*/
+
+#relatorio section.main table{
+    width: 100%;
+    margin: auto;
+    border-collapse: collapse;
+}
+#relatorio section.main table thead{
+    background: var(--header);
+    color: var(--main);
+}
+
+#relatorio section.main table thead th{
+    height: 40px;
+    text-align: left;
+    padding: 0 10px;
+}
+#relatorio section.main table tbody tr{
+    cursor: pointer;
+}
+#relatorio section.main table tbody tr:hover{
+    background: var(--nav);
+}
+#relatorio section.main table tbody td{
+    padding: 3px 10px;
+    border: 1px solid var(--header);
+}
+#relatorio section.main table tbody td:last-child{
+    width: 20%;
+    text-align: center;
+    padding: 3px 0;
+}
+
+
